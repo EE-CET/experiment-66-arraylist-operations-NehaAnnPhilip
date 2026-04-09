@@ -6,7 +6,7 @@ public class ArrayListOperations {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         
-        // Read the number of items
+        // Check if there is input before reading N
         if (!scanner.hasNextInt()) return;
         int n = scanner.nextInt();
         
@@ -17,17 +17,17 @@ public class ArrayListOperations {
             cart.add(scanner.next());
         }
         
-        // Read the item to search for
+        // Read the single String representing the item to search for
         String searchItem = scanner.next();
         
-        // Sort the items alphabetically
+        // Sort the items alphabetically (lexicographical order)
         Collections.sort(cart);
         
-        // Print the sorted list
-        // ArrayList's toString() method provides the [Item1, Item2] format automatically
+        // Output Line 1: Sorted Items: [Item1, Item2, ...]
+        // ArrayList.toString() matches the required bracket notation exactly
         System.out.println("Sorted Items: " + cart);
         
-        // Check if the specific item exists in the list
+        // Output Line 2: Found or Not Found
         if (cart.contains(searchItem)) {
             System.out.println("Found");
         } else {
