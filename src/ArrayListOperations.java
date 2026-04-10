@@ -2,40 +2,33 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
 
-public class ArrayListOperations {
-
+public class Main {
     public static void main(String[] args) {
-
         Scanner scanner = new Scanner(System.in);
+           int n = Integer.parseInt(scanner.nextLine());
+        String[] items = scanner.nextLine().split(" ");
 
-        int N = scanner.nextInt();
-        scanner.nextLine(); // consume leftover newline
+        ArrayList<String> list = new ArrayList<>();
 
-        String line = scanner.nextLine();
-        String[] items = line.split(" ");
-
-        ArrayList<String> cart = new ArrayList<>();
-
-        for (int i = 0; i < N; i++) {
-            cart.add(items[i]);
+        for (int i = 0; i < n; i++) {
+            list.add(items[i]);
         }
 
-        // Sort the list
-        Collections.sort(cart);
+        // Sort list
+        Collections.sort(list);
 
-        // Read search item
+        // Search item
         String searchItem = scanner.nextLine();
 
-        // Print sorted list
-        System.out.println("Sorted Items: " + cart);
+        // Output
+        System.out.println("Sorted Items: " + list);
 
-        // Check existence
-        if (cart.contains(searchItem)) {
-            System.out.println("Found");
+        if (list.contains(searchItem)) {
+            System.out.print("Found");
         } else {
-            System.out.println("Not Found");
+            System.out.print("Not Found");
         }
-
-        scanner.close();
     }
 }
+    
+
